@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/neuralink/static/css/main.7cda0caf.css",
+    "main.js": "/neuralink/static/js/main.506e633d.js",
+    "index.html": "/neuralink/index.html",
+    "main.7cda0caf.css.map": "/neuralink/static/css/main.7cda0caf.css.map",
+    "main.506e633d.js.map": "/neuralink/static/js/main.506e633d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7cda0caf.css",
+    "static/js/main.506e633d.js"
+  ]
+}
