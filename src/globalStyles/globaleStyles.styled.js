@@ -6,13 +6,11 @@ export const GlobalStyle = createGlobalStyle`
     html,
     body {
     height: 100%;
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Roboto', sans-serif; 
     font-weight: 500;
     letter-spacing: 0.02em;
     color: #000;
     background-color: #fff;
-    /* color: ${(props) => props.theme.color.primary_white};
-    background-color: ${(props) => props.theme.color.primary_black}; */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     }

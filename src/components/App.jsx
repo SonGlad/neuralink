@@ -1,19 +1,43 @@
-import { SharedLayout } from "./SharedLayout";
-import { Route, Routes} from "react-router-dom";
-// import { lazy, useEffect } from "react";
-// import { useDispatch} from "react-redux";
-// import { PrivateRoute } from "./PrivateRoute";
-// import { RestrictedRoute } from "./RestrictedRoute";
+import { Container } from "../components/Container/Container";
+import { Section, HeroSection, ProblemSolutionSection, AdvisorsSection, PartnersSection } from "../components/Section/Section";
+import { Header } from "../components/Header/Header";
+import { PromoSection } from "../components/PromoSection/PromoSection";
+import { ProblemSection } from "../components/ProblemSection/ProblemSection";
+import { Description } from "../components/Description/Description";
+import { Advisors } from "../components/Advisors/Advisors";
+import { Partners } from "../components/Partners/Partners";
+import { Footer } from "../components/Footer/Footer";
+
 
 
 export const App= () => {
   return (
     <>
-    <Routes>
-      <Route parth='/' element = {<SharedLayout/>}>
-
-      </Route>    
-    </Routes>
+      <Header/>
+        <HeroSection>
+          <Container>
+            <PromoSection/>
+          </Container>
+        </HeroSection>
+        <ProblemSolutionSection>
+          <ProblemSection/>
+        </ProblemSolutionSection>
+        <Section>
+          <Container>
+            <Description/>
+          </Container>
+        </Section>
+        <AdvisorsSection>
+          <Container>
+            <Advisors/>
+          </Container>
+        </AdvisorsSection>
+        <PartnersSection>
+          <Container>
+            <Partners/>
+          </Container>
+        </PartnersSection>
+      <Footer/>
     </>
   );
 };
