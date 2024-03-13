@@ -5,33 +5,34 @@ export const GlobalStyle = createGlobalStyle`
    
     html,
     body {
-    height: 100%;
-    font-family: 'Roboto', sans-serif; 
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    color: #000;
-    background-color: #fff;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+        height: 100%;
+        font-family: 'Roboto', sans-serif; 
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        color: #000;
+        background-color: #fff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
     }
     
 
     a {
-    text-decoration: none;
-    color: inherit;
+        text-decoration: none;
+        color: inherit;
     }
 
     ul,
     ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0;
     }
 
     img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+        display: block;
+        max-width: 100%;
+        height: auto;
     }
 
     h1, 
@@ -41,10 +42,11 @@ export const GlobalStyle = createGlobalStyle`
     h5, 
     h6, 
     p {
-    margin: 0;
+        margin: 0;
     }
 
     *{
-    box-sizing: border-box;
+        box-sizing: border-box;
     }
+
 `;

@@ -9,12 +9,23 @@ import {ReactComponent as RedditSVG} from "../../images/svg-icons/reddit.svg";
 import {ReactComponent as TelegramSVG} from "../../images/svg-icons/telegram.svg";
 import {ReactComponent as BitcoinSVG} from "../../images/svg-icons/bitcoin.svg";
 import {ReactComponent as YoutubeSVG} from "../../images/svg-icons/youtube.svg";
+import { useDispatch } from "react-redux";
+import {openModalPrivacy, openModalTerms} from "../../redux/Modal/modal-slice";
 
 
 
 export const Footer = () => {
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
+    const dispatch = useDispatch();
+
+    const openModalforPrivacy = () => {
+        dispatch(openModalPrivacy());
+    };
+
+    const openModalforTerms = () => {
+        dispatch(openModalTerms());
+    };
 
 
     return(
@@ -68,9 +79,9 @@ export const Footer = () => {
                 <div className="bottom-cont">
                     <p className="bottom-text">&#169;<span> {currentYear} </span>Neuralink AI</p>
                     <div className="footer-btn-cont">
-                        <button className="footer-modal-btn">Privacy Policy</button>
+                        <button className="footer-modal-btn" type="button" onClick={openModalforPrivacy}>Privacy Policy</button>
                         <span className="footer-span"> &#124; </span>
-                        <button className="footer-modal-btn">Terms of Use</button>
+                        <button className="footer-modal-btn" type="button" onClick={openModalforTerms}>Terms of Use</button>
                     </div>
                 </div>
             </Container>

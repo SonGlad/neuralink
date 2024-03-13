@@ -7,10 +7,15 @@ import { Description } from "../components/Description/Description";
 import { Advisors } from "../components/Advisors/Advisors";
 import { Partners } from "../components/Partners/Partners";
 import { Footer } from "../components/Footer/Footer";
+import { useModal } from "../hooks/useModal";
+import { Modal } from "./Modal/Modal";
 
 
 
 export const App= () => {
+  const {isPrivacyModalOpen, isTermsModalOpen, isRegisterModalOpen} = useModal();
+
+
   return (
     <>
       <Header/>
@@ -38,6 +43,7 @@ export const App= () => {
           </Container>
         </PartnersSection>
       <Footer/>
+      {(isPrivacyModalOpen || isTermsModalOpen || isRegisterModalOpen) && <Modal/>}
     </>
   );
 };

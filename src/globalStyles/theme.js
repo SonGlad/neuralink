@@ -15,6 +15,8 @@ export const theme = {
         grey: '#b7b7b7',
         grey2: '#ebebeb',
         footer_bg: '#1b1a75',
+        green2: '#3cbc81',
+        red: '#e74a3b',
     },
 
     transition: {

@@ -35,7 +35,7 @@ export const Advisors = () => {
                         <img className="picture" src={BillGates} alt="Bill" width={102} />
                     </div>
                     <div className="advisors-descr-cont">
-                        <h3 className="advisors-name">JBill Gates:</h3>
+                        <h3 className="advisors-name">Bill Gates:</h3>
                         <p className="advisors-text">Business magnate, investor, author, philanthropist, and humanitarian</p>
                         <LinkedinSvg className="advisors-svg" width={26} height={26}/>
                     </div>

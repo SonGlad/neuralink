@@ -2,16 +2,24 @@ import { StyledForm } from "./RegisterForm.style";
 import { useFormik } from "formik";
 import { ContactFormSchema } from "../../utils/ValidationSchema";
 import { ShowRules } from "../../utils/ShowRules";
-import { useState, useEffect } from "react";
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css';
-import { AsYouType } from 'libphonenumber-js'
+import { AsYouType } from 'libphonenumber-js';
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+// import { 
+//     setSuccsessFalse,  
+//     openLoader, 
+//     closeLoader 
+// } from "../../redux/Modal/modal-slice";
+import { openModalRegister, setSuccsessTrue } from "../../redux/Modal/modal-slice";
 
 
 
 export const RegisterForm = () => {
     const [formChanged, setFormChanged] = useState(false);
     const [phoneNumber, setPhoneNumber] = useState('');
+    const dispatch = useDispatch();
 
 
     const {
@@ -42,6 +50,8 @@ export const RegisterForm = () => {
             const phoneNumberWithPlus = '+' + phoneNumber;
             const formattedNumber = new AsYouType().input(phoneNumberWithPlus);
             console.log(formattedNumber);
+            dispatch(openModalRegister());
+            dispatch(setSuccsessTrue());
             
             resetForm({
                 values: {
