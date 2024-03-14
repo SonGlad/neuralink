@@ -1,19 +1,26 @@
 import { HeaderStyled } from "./Header.styled";
-import Logo from "../../images/images/Logo.png"
+import Logo from "../../images/images/Logo.png";
+import { forwardRef } from 'react';
 
 
-export const Header = () => {
+
+export const Header = forwardRef(({registerFormRef}, ref) => {
 
 
     return(
         <HeaderStyled>
             <div className="header-container">
                 <img className="header-logo" src={Logo} alt="header_logo" width={140} height={62} />
-                <a className="register-link" href="#register">
+                <button type="button" className="register-link" onClick={() => 
+                    registerFormRef.current.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    })}
+                >
                     <span>Create account</span>
-                </a>
+                </button>
             </div>
         </HeaderStyled>
     )
-};
+});
 

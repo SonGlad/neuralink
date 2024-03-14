@@ -15,19 +15,14 @@ export const HeaderStyled = styled.header`
 
         min-width: 300px;
         margin: 0 auto;
-        /* max-width: 320px; */
         padding: 0 18px;
 
-        /* outline: 2px solid red;
-        outline-offset: -2px; */
 
         @media screen and (min-width: 1000px) {
-            /* max-width: 834px; */
             padding: 0 40px;
         }
 
         @media screen and (min-width: 1920px) {
-            /* max-width: 1440px; */
             padding: 0 55px;
         }
     }
@@ -39,6 +34,7 @@ export const HeaderStyled = styled.header`
     }
 
     .register-link{
+        cursor: pointer;
         margin-right: 30px;
         margin-left: auto;
         padding: 6px 12px;

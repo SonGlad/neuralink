@@ -9,19 +9,21 @@ import { Partners } from "../components/Partners/Partners";
 import { Footer } from "../components/Footer/Footer";
 import { useModal } from "../hooks/useModal";
 import { Modal } from "./Modal/Modal";
+import { useRef } from "react";
 
 
 
 export const App= () => {
   const {isPrivacyModalOpen, isTermsModalOpen, isRegisterModalOpen} = useModal();
+  const registerFormRef = useRef(null);
 
 
   return (
     <>
-      <Header/>
+      <Header registerFormRef={registerFormRef}/>
         <HeroSection>
           <Container>
-            <PromoSection/>
+            <PromoSection registerFormRef={registerFormRef}/>
           </Container>
         </HeroSection>
         <ProblemSolutionSection>

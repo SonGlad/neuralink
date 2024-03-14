@@ -5,7 +5,13 @@ export const DescriptionStyled = styled.div`
     padding-top: 54px;
     padding-bottom: 14px;
 
-    .description-title{
+    .hidden .description-title{
+        animation: none;
+        opacity: 0;
+    }
+
+    .visible .description-title{
+        opacity: 0;
         color: ${p => p.theme.color.light_blue};
         margin-bottom: 54px;
         letter-spacing: 1px;
@@ -13,12 +19,24 @@ export const DescriptionStyled = styled.div`
         font-size: 42px;
         font-weight: 300;
         text-align: center;
+        animation: slideDescriptionTitleToRight 1s ease forwards;
 
         @media screen and (min-width: 1440px){
             font-size: 48px;
         }
         @media screen and (min-width: 1920px){
             font-size: 54px;
+        }
+    }
+
+    @keyframes slideDescriptionTitleToRight {
+        0%{
+            opacity: 0;
+            transform: translateX(-25%);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0%);
         }
     }
 

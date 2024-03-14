@@ -10,7 +10,13 @@ export const AdvisorsStyled = styled.div`
         padding-bottom: 0;
     }
 
-    .advisors-title{
+    .hidden .advisors-title{
+        animation: none;
+        opacity: 0;
+    }
+
+    .visible .advisors-title{
+        opacity: 0;
         margin-bottom: 54px;
         font-weight: 300;
         font-size: 42px;
@@ -18,12 +24,24 @@ export const AdvisorsStyled = styled.div`
         line-height: 1;
         text-align: center;
         color: ${p => p.theme.color.white};
+        animation: slideSlideAdvisorsTitleDown 1s ease forwards;
 
         @media screen and (min-width: 1440px){
             font-size: 48px;
         }
         @media screen and (min-width: 1920px){
             font-size: 54px;
+        }
+    }
+
+    @keyframes slideSlideAdvisorsTitleDown {
+        0%{
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0%);
         }
     }
 
@@ -43,7 +61,9 @@ export const AdvisorsStyled = styled.div`
         }
     }
 
+
     .advisors-item{
+        opacity: 0;
         border-radius: 10px;
         box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
         padding: 23px;
@@ -56,6 +76,46 @@ export const AdvisorsStyled = styled.div`
             flex: 1
         }
     }
+
+    .hidden .ad-item-1,
+    .hidden .ad-item-2{
+        animation: none;
+        opacity: 0;
+    }
+
+    .ad-item-1{
+        opacity: 0;
+        transform: translateX(-25%);
+        animation: slideAdviserToRight 1s ease forwards;
+    }
+    @keyframes slideAdviserToRight {
+        0%{
+            opacity: 0;
+            transform: translateX(-25%);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0%);
+        }
+    }
+
+    .ad-item-2{
+        opacity: 0;
+        transform: translateX(25%);
+        animation: slideAdviserToLeft 1s ease forwards;
+        animation-delay: .2s;
+    }
+    @keyframes slideAdviserToLeft {
+        0%{
+            opacity: 0;
+            transform: translateX(25%);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0%);
+        }
+    }
+
 
     .advisors-item-top-cont{
         display: flex;
