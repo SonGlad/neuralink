@@ -11,13 +11,13 @@ export const PromoSection = forwardRef(({registerFormRef}, reff) => {
 
     const { ref, inView } = useInView({
         triggerOnce: false,
-        threshold: 1,
+        threshold: 0.4,
     });
 
 
     return(
         <PromoSectionStyled >
-            <div className={`hero-container ${inView ? 'visible' : 'hidden'}`} ref={ref}>
+            <div className={`hero-container ${inView ? 'active' : ''}`} ref={ref}>
                 <div className="text-container">
                     <h1 className="title">
                         Smart Investing That Makes You $1500 in 5 Hours And Cures Poverty

@@ -10,12 +10,8 @@ export const AdvisorsStyled = styled.div`
         padding-bottom: 0;
     }
 
-    .hidden .advisors-title{
-        animation: none;
-        opacity: 0;
-    }
-
-    .visible .advisors-title{
+    .advisors-title{
+        transform: translateY(-100%);
         opacity: 0;
         margin-bottom: 54px;
         font-weight: 300;
@@ -24,7 +20,8 @@ export const AdvisorsStyled = styled.div`
         line-height: 1;
         text-align: center;
         color: ${p => p.theme.color.white};
-        animation: slideSlideAdvisorsTitleDown 1s ease forwards;
+        transition: opacity 1s ease,
+                    transform 1s ease;
 
         @media screen and (min-width: 1440px){
             font-size: 48px;
@@ -34,15 +31,9 @@ export const AdvisorsStyled = styled.div`
         }
     }
 
-    @keyframes slideSlideAdvisorsTitleDown {
-        0%{
-            opacity: 0;
-            transform: translateY(-100%);
-        }
-        100%{
-            opacity: 1;
-            transform: translateY(0%);
-        }
+    .active .advisors-title{
+        opacity: 1;
+        transform: translateY(0%);
     }
 
     .advisors-list{
@@ -77,45 +68,32 @@ export const AdvisorsStyled = styled.div`
         }
     }
 
-    .hidden .ad-item-1,
-    .hidden .ad-item-2{
-        animation: none;
-        opacity: 0;
-    }
 
     .ad-item-1{
         opacity: 0;
         transform: translateX(-25%);
-        animation: slideAdviserToRight 1s ease forwards;
+        transition: opacity 1s ease,
+                    transform 1s ease;
     }
-    @keyframes slideAdviserToRight {
-        0%{
-            opacity: 0;
-            transform: translateX(-25%);
-        }
-        100%{
-            opacity: 1;
-            transform: translateX(0%);
-        }
+
+    .active .ad-item-1{
+        opacity: 1;
+        transform: translateX(0%);
     }
+
 
     .ad-item-2{
         opacity: 0;
         transform: translateX(25%);
-        animation: slideAdviserToLeft 1s ease forwards;
-        animation-delay: .2s;
-    }
-    @keyframes slideAdviserToLeft {
-        0%{
-            opacity: 0;
-            transform: translateX(25%);
-        }
-        100%{
-            opacity: 1;
-            transform: translateX(0%);
-        }
+        transition: opacity 1s ease,
+                    transform 1s ease;
+                    transition-delay: 0.2s;
     }
 
+    .active .ad-item-2{
+        opacity: 1;
+        transform: translateX(0%);
+    }
 
     .advisors-item-top-cont{
         display: flex;

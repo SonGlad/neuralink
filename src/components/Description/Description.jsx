@@ -7,13 +7,13 @@ export const Description = () => {
 
     const { ref, inView } = useInView({
         triggerOnce: false,
-        threshold: 0.1,
+        threshold: 0.2,
     });
 
 
     return(
         <DescriptionStyled>
-            <div className={`for-animation-cont ${inView ? 'visible' : 'hidden'}`} ref={ref}>
+            <div className={`for-animation-cont ${inView ? 'active' : ''}`} ref={ref}>
                 <h2 className="description-title">What Makes Neuralink AI So Good For Investing</h2>
                 <ul className="description-list">
                     <li className="description-item">

@@ -10,13 +10,13 @@ export const Advisors = () => {
 
     const { ref, inView } = useInView({
         triggerOnce: false,
-        threshold: 0.1,
+        threshold: 0.2,
     });
 
 
     return(
         <AdvisorsStyled>
-            <div className={`advisors-div-for-animation ${inView ? 'visible' : 'hidden'}`} ref={ref}>
+            <div className={`advisors-div-for-animation ${inView ? 'active' : ''}`} ref={ref}>
                 <h2 className="advisors-title">Advisors</h2>
                 <ul className="advisors-list">
                     <li className="advisors-item ad-item-1" style={{'--i': 1}}>

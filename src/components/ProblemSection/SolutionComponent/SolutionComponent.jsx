@@ -13,7 +13,7 @@ export const SolutionComponent = () => {
 
     return(
         <SolutionComponentStyled>
-            <div className={`solution-bottom ${inView ? 'visible' : 'hidden'}`} ref={ref}>
+            <div className={`solution-bottom ${inView ? 'active' : ''}`} ref={ref}>
                 <h2 className="solution-title">Solution</h2>
                 <div className="solution-text-cont">
                     <p className="solution-text">

@@ -12,7 +12,7 @@ export const SolutionItems = () => {
 
     return(
         <SolutionItemsStyled>
-            <div className={`solution-steps-cont ${inView ? 'visible' : 'hidden'}`} ref={ref}>
+            <div className={`solution-steps-cont ${inView ? 'active' : ''}`} ref={ref}>
                 <h2 className="solution-title solution-steps-title">So, what do you need to do to start?</h2>
                 <ul className="solution-steps-list">
                     <li className="solution-steps-item item-1">

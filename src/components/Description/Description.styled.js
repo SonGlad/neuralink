@@ -5,12 +5,9 @@ export const DescriptionStyled = styled.div`
     padding-top: 54px;
     padding-bottom: 14px;
 
-    .hidden .description-title{
-        animation: none;
-        opacity: 0;
-    }
 
-    .visible .description-title{
+    .description-title{
+        transform: translateX(-25%);
         opacity: 0;
         color: ${p => p.theme.color.light_blue};
         margin-bottom: 54px;
@@ -19,7 +16,8 @@ export const DescriptionStyled = styled.div`
         font-size: 42px;
         font-weight: 300;
         text-align: center;
-        animation: slideDescriptionTitleToRight 1s ease forwards;
+        transition: opacity 1s ease,
+                    transform 1s ease;
 
         @media screen and (min-width: 1440px){
             font-size: 48px;
@@ -29,15 +27,9 @@ export const DescriptionStyled = styled.div`
         }
     }
 
-    @keyframes slideDescriptionTitleToRight {
-        0%{
-            opacity: 0;
-            transform: translateX(-25%);
-        }
-        100%{
-            opacity: 1;
-            transform: translateX(0%);
-        }
+    .active .description-title{
+        opacity: 1;
+        transform: translateX(0%);
     }
 
     .description-item{

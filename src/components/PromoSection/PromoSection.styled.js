@@ -21,20 +21,17 @@ export const PromoSectionStyled = styled.div`
     }
 
 
-    .hidden .text-container > .title{
-        animation: none;
+    .title{
         opacity: 0;
-    }
-
-    .visible .text-container > .title{
-        opacity: 0;
+        transform: translateY(-100px);
         margin-bottom: 20px;
         font-weight: 300;
         font-size: 36px;
         line-height: 1.2;
         color: ${p => p.theme.color.white};
         letter-spacing: 1px;
-        animation: slideTitleDown 1s ease forwards;
+        transition: opacity 1s ease ,
+                    transform 1s ease;
 
         @media screen and (min-width: 576px){
             font-size: 42px;
@@ -48,31 +45,22 @@ export const PromoSectionStyled = styled.div`
         }
     }
 
-    @keyframes slideTitleDown {
-        0%{
-            opacity: 0;
-            transform: translateY(-100px);
-        }
-        100%{
-            opacity: 1;
-            transform: translateY(0px);
-        }
+    .active .text-container > .title{
+        opacity: 1;
+        transform: translateY(0px);
     }
 
 
-    .hidden .text-container > .title-text{
-        animation: none;
+    .title-text{
         opacity: 0;
-    }
-
-    .text-container > .title-text{
-        opacity: 0;
+        transform: translateX(-100px);
         margin-bottom: 40px;
         font-weight: 400;
         line-height: 29px;
         font-size: 18px;
         color: ${p => p.theme.color.white};
-        animation: slideTexttoRight 1s ease forwards;
+        transition: opacity 1s ease,
+                    transform 1s ease;
 
         @media screen and (min-width: 576px){
             font-size: 13px;
@@ -80,46 +68,29 @@ export const PromoSectionStyled = styled.div`
         }
     }
 
-
-    @keyframes slideTexttoRight {
-        0%{
-            opacity: 0;
-            transform: translateX(-100px);
-        }
-        100%{
-            opacity: 1;
-            transform: translateX(0px);
-        }
+    .active .text-container > .title-text{
+        opacity: 1;
+        transform: translateX(0px);
     }
 
-
-
-    .hidden .video-container{
-        animation: none;
-        opacity: 0;
-    }
 
     .video-container{
         opacity: 0;
+        transform: translateX(300px);
         display: flex;
         align-items: center;
         justify-content: center;
-        animation: slideVideoToLeft 1s ease forwards;
+        transition: opacity 1s ease,
+                    transform 1s ease;
 
         @media screen and (min-width: 768px){
             align-items: flex-start;
         }
     }
 
-    @keyframes slideVideoToLeft {
-        0%{
-            opacity: 0;
-            transform: translateX(300px);
-        }
-        100%{
-            opacity: 1;
-            transform: translateX(0px);
-        }
+    .active .video-container{
+        opacity: 1;
+        transform: translateX(0px);
     }
 
 

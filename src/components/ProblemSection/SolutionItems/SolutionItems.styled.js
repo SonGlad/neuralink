@@ -129,51 +129,42 @@ export const SolutionItemsStyled = styled.div`
         }
     }
 
-    .hidden .item1,
-    .hidden .item2,
-    .hidden .item3{
-        animation: none;
+    .solution-steps-list .item-1{
+        transform: translateX(100%);
         opacity: 0;
+        transition: transform 1s ease,
+                    opacity 1s ease;
+        transition-delay: 0.2s;
     }
 
-    .visible .solution-steps-list .item-1{
-        transform: translateX(100%);
-        animation: slideItem1ToLeft 1s ease forwards;
-        animation-delay: 0.5s;
+    .active .solution-steps-list .item-1{
+        opacity: 1;
+        transform: translateX(0%);
     }
-    .visible .solution-steps-list .item-2{
+
+    .solution-steps-list .item-2{
+        opacity: 0;
         transform: translateX(-100%);
-        animation: slideItem2ToRight 1s ease forwards;
-        animation-delay: 0.5s;
-    }
-    .visible .solution-steps-list .item-3{
-        transform: translateX(100%);
-        animation: slideItem3ToLeft 1s ease forwards;
-        animation-delay: 0.5s;
+        transition: transform 1s ease,
+                    opacity 1s ease;
+        transition-delay: 0.2s;
     }
 
-    @keyframes slideItem1ToLeft {
-        0%{
-            transform: translateX(100%);
-        }
-        100%{
-            transform: translateX(0%);
-        }
+    .active .solution-steps-list .item-2{
+        opacity: 1;
+        transform: translateX(0%);
     }
-    @keyframes slideItem2ToRight {
-        0%{
-            transform: translateX(-100%);
-        }
-        100%{
-            transform: translateX(0%);
-        }
+
+    .solution-steps-list .item-3{
+        opacity: 0;
+        transform: translateX(100%);
+        transition: transform 1s ease,
+                    opacity 1s ease;
+        transition-delay: 0.2s;
     }
-    @keyframes slideItem3ToLeft {
-        0%{
-            transform: translateX(100%);
-        }
-        100%{
-            transform: translateX(0%);
-        }
+
+    .active .solution-steps-list .item-3{
+        opacity: 1;
+        transform: translateX(0%);
     }
 `

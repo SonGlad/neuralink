@@ -7,36 +7,22 @@ export const SolutionComponentStyled = styled.div`
         padding-top: 50px;
     }
 
-    .hidden .solution-title{
-        animation: none;
+    .solution-title{
         opacity: 0;
-    }
-
-    .visible .solution-title{
-        opacity: 0;
+        transform: translateY(-100px);
         font-weight: 300;
         font-size: 42px;
         letter-spacing: 1px;
         color: ${p => p.theme.color.white};
         text-align: center;
         margin-bottom: 36px;
-        animation: slideSolutionDown 1s ease forwards;
+        transition: opacity 1s ease,
+                    transform 1s ease;
     }
 
-    @keyframes slideSolutionDown {
-        0%{
-            opacity: 0;
-            transform: translateY(-100px);
-        }
-        100%{
-            opacity: 1;
-            transform: translateY(0px);
-        }
-    }
-
-    .hidden .solution-text-cont{
-        animation: none;
-        opacity: 0;
+    .active .solution-title{
+        opacity: 1;
+        transform: translateY(0px);
     }
 
     .solution-text-cont{
@@ -49,18 +35,12 @@ export const SolutionComponentStyled = styled.div`
         color: ${p => p.theme.color.white};
         text-align: center;
         position: relative;
-        animation: slideSolutionAppear 2s ease forwards;
-        animation-delay: 0.5s;
-
+        transition: opacity 2s ease;
+        transition-delay: 0.5s;
     }
 
-    @keyframes slideSolutionAppear {
-        0%{
-            opacity: 0;
-        }
-        100%{
-            opacity: 1;
-        }
+    .active .solution-text-cont{
+        opacity: 1;
     }
 
     .solution-decoration{

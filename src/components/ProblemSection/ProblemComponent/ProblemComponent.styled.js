@@ -7,33 +7,24 @@ export const ProblemComponentStyled = styled.div`
        display: block;
     }
 
-    .hidden .section-title{
-        animation: none;
-        opacity: 0;
-    }
 
-    .visible .section-title{
+    .section-title{
         opacity: 0;
+        transform: translateY(-100px);
         font-weight: 300;
         font-size: 43px;
         color: ${p => p.theme.color.title_blue};
         letter-spacing: 1px;
         text-align: center;
         margin-bottom: 43px;
-        animation: slideProblemDown 1s ease forwards;
+        transition: opacity 1s ease,
+                    transform 1s ease;
     }
-
-    @keyframes slideProblemDown {
-        0%{
-            opacity: 0;
-            transform: translateY(-100px);
-        }
-        100%{
-            opacity: 1;
-            transform: translateY(0px);
-        }
+    
+    .active .section-title{
+        opacity: 1;
+        transform: translateY(0px);
     }
-
 
 
     .descr-cont{
@@ -48,10 +39,6 @@ export const ProblemComponentStyled = styled.div`
         }
     }
 
-    .hidden .problem-item{
-        animation: none;
-        opacity: 0;
-    }
 
     .problem-item{
         display: flex;
@@ -59,8 +46,9 @@ export const ProblemComponentStyled = styled.div`
         justify-content: center;
         padding-bottom: 30px;
         opacity: 0;
-        animation: opacityAppearence 1s ease forwards;
-        animation-delay: calc(0.2s * var(--i));
+        z-index: 1;
+        transition: opacity 1s ease;
+        transition-delay: calc(0.2s * var(--i));
 
         @media screen and (min-width: 768px){
             padding: 0 42px 30px 24px;
@@ -89,15 +77,9 @@ export const ProblemComponentStyled = styled.div`
         }
     }
 
-    @keyframes opacityAppearence {
-        0%{
-            opacity: 0;
-            z-index: 1;
-        }
-        100%{
-            opacity: 1;
-            z-index: 2;
-        }
+    .active .problem-item{
+        opacity: 1;
+        z-index: 2;
     }
 
 

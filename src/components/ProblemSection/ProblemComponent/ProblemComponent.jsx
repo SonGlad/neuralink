@@ -6,13 +6,13 @@ export const ProblemComponent = () => {
 
     const { ref, inView } = useInView({
         triggerOnce: false,
-        threshold: 0.5,
+        threshold: 0.3,
     });
 
 
     return(
         <ProblemComponentStyled>
-            <div className={`for-animation ${inView ? 'visible' : 'hidden'}`} ref={ref}>
+            <div className={`for-animation ${inView ? 'active' : ''}`} ref={ref}>
                 <h2 className="section-title">Problem</h2>
                 <div className="descr-cont">
                     <ul className="problem-list">
