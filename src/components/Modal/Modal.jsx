@@ -56,7 +56,7 @@ export const Modal = () => {
 
 
 
-    return createPortal(
+    return createPortal( 
         (isPrivacyModalOpen || isTermsModalOpen || isRegisterModalOpen) && (
             <ModalStyled onClick={handleBackdropClick}>
                 {isPrivacyModalOpen && (

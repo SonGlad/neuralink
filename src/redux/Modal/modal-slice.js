@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { createContact } from "./data-operation"
 
 
 const modalSlice = createSlice({
@@ -42,7 +43,25 @@ const modalSlice = createSlice({
         closeLoader: (state) => {
             state.isLoading = false;
         },
-    }
+    },
+
+    extraReducers: builder => {
+        builder
+        .addCase(createContact.pending, state =>{
+            state.isLoading = true;
+            state.isRegisterModal = false;
+        })
+        .addCase(createContact.fulfilled, (state, { payload }) => {
+            state.isLoading = false;
+            state.isSuccsess = true;
+            state.isRegisterModal = true;
+        })
+        .addCase(createContact.rejected, (state, {payload}) => {
+            state.isLoading = false;
+            state.isSuccsess = false;
+            state.isRegisterModal = true;
+        })
+    },
 });
 
 

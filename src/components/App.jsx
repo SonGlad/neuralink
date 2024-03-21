@@ -10,16 +10,17 @@ import { Footer } from "../components/Footer/Footer";
 import { useModal } from "../hooks/useModal";
 import { Modal } from "./Modal/Modal";
 import { useRef } from "react";
-
+import {RefreshLoading} from "../components/CustomLoaders/CustomLoaders"
 
 
 export const App= () => {
-  const {isPrivacyModalOpen, isTermsModalOpen, isRegisterModalOpen} = useModal();
+  const {isPrivacyModalOpen, isTermsModalOpen, isRegisterModalOpen, isLoading} = useModal();
   const registerFormRef = useRef(null);
 
 
   return (
-    <>
+    <> 
+      {isLoading && <RefreshLoading />}
       <Header registerFormRef={registerFormRef}/>
         <HeroSection>
           <Container>

@@ -7,12 +7,7 @@ import 'react-phone-input-2/lib/style.css';
 import { AsYouType } from 'libphonenumber-js';
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-// import { 
-//     setSuccsessFalse,  
-//     openLoader, 
-//     closeLoader 
-// } from "../../redux/Modal/modal-slice";
-import { openModalRegister, setSuccsessTrue } from "../../redux/Modal/modal-slice";
+import { createContact } from "../../redux/Modal/data-operation"
 
 
 
@@ -39,19 +34,22 @@ export const RegisterForm = () => {
             surname: '',
             email: '',
             phone: phoneNumber,
+            resource: 'neuralink'
         },
         
         validationSchema: ContactFormSchema,
         
         onSubmit: (values) => {
-            console.log(values.name);
-            console.log(values.surname);
-            console.log(values.email);
             const phoneNumberWithPlus = '+' + phoneNumber;
             const formattedNumber = new AsYouType().input(phoneNumberWithPlus);
-            console.log(formattedNumber);
-            dispatch(openModalRegister());
-            dispatch(setSuccsessTrue());
+
+            dispatch(createContact({
+                name: values.name,
+                lastName: values.surname,
+                email: values.email,
+                phone: formattedNumber,
+                resource: values.resource
+            }));
             
             resetForm({
                 values: {

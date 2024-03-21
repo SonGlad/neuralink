@@ -201,4 +201,5 @@ export const PromoSectionStyled = styled.div`
             color: #3eff00;
         }
     }
+
 `
