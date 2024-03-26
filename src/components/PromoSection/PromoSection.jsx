@@ -1,4 +1,6 @@
 import { PromoSectionStyled } from "./PromoSection.styled";
+import { Player, ControlBar, BigPlayButton } from 'video-react';
+import 'video-react/dist/video-react.css';
 import Video from "../../video/video.mp4";
 import { RegisterForm } from "../RegisterForm/RegisterForm";
 import LogoPicture from "../../images/images/logo_150.png";
@@ -27,13 +29,17 @@ export const PromoSection = forwardRef(({registerFormRef}, reff) => {
                     </p>
                 </div>
                 <div className="video-container">
-                    <video className="video" controls
+                    <Player  src={Video}  className="video">
+                        <BigPlayButton position="center"/>
+                        <ControlBar autoHide={false}/>
+                    </Player>
+                    {/* <video className="video" controls
                         controlsList="nodownload noremoteplayback noplaybackrate foobar"
                         preload="auto" allowFullScreen playsInline
                     >
                         <source src={Video} type="video/mp4" />
                         Your browser does not support the video tag.
-                    </video>
+                    </video> */}
                 </div>
             </div>
             <div className="form-container" id="register" ref={registerFormRef}>

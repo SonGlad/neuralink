@@ -85,6 +85,19 @@ export const PromoSectionStyled = styled.div`
 
         @media screen and (min-width: 768px){
             align-items: flex-start;
+            width: 250%;
+        }
+        @media screen and (min-width: 1000px){
+            align-items: flex-start;
+            width: 200%;
+        }
+        @media screen and (min-width: 1200px){
+            align-items: flex-start;
+            width: 170%;
+        }
+        @media screen and (min-width: 1440px){
+            align-items: flex-start;
+            width: 100%;
         }
     }
 
@@ -98,15 +111,22 @@ export const PromoSectionStyled = styled.div`
         width: 95%;
         height: auto;
         position: relative;
-
-        &::-webkit-media-controls-play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-        }
     }
+
+    
+    /* .video-container .video::-webkit-media-controls {
+        width: 100%;
+        height: auto;
+    }
+
+    .video-container .video::-webkit-media-controls-play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    } */
+
 
     .form-container{
         width: 100%;
