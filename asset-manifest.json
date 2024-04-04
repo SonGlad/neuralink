@@ -1,18 +1,14 @@
 {
   "files": {
     "main.css": "/neuralink/static/css/main.d218a176.css",
-    "main.js": "/neuralink/static/js/main.eebeb1bc.js",
+    "main.js": "/neuralink/static/js/main.d74b1db0.js",
     "static/media/video.mp4": "/neuralink/static/media/video.12da450262cf825de5a5.mp4",
     "static/media/Logo.png": "/neuralink/static/media/Logo.5535bc54ccf9a56d9dba.png",
     "static/media/Bill.jpg": "/neuralink/static/media/Bill.5881228ed0efdbe2d541.jpg",
     "static/media/Jeff.jpg": "/neuralink/static/media/Jeff.423bc5613fde69af22c0.jpg",
     "static/media/main-bg.png": "/neuralink/static/media/main-bg.c59cb0a35c350154912b.png",
     "static/media/bg-white.png": "/neuralink/static/media/bg-white.4f61c8da3ddba1855c12.png",
-    "static/media/reddit.svg": "/neuralink/static/media/reddit.991cb5084f7cda9b4e4ed3ce12aef8e5.svg",
     "index.html": "/neuralink/index.html",
-    "static/media/bitcoin.svg": "/neuralink/static/media/bitcoin.b4ba57772e103e6a8fb4de177d786921.svg",
-    "static/media/twitter.svg": "/neuralink/static/media/twitter.0fc727e11f32ae24517e366fc3250e36.svg",
-    "static/media/youtube.svg": "/neuralink/static/media/youtube.dc025806839aa4b55adf341e2d4c636c.svg",
     "static/media/medium.svg": "/neuralink/static/media/medium.6fd60dd31fc927c71a998264d3685de8.svg",
     "static/media/error-logo.svg": "/neuralink/static/media/error-logo.abe136de24828a5546a0e90b3e021724.svg",
     "static/media/linkedin.svg": "/neuralink/static/media/linkedin.606282e12ab767864dbb0743c356aff5.svg",
@@ -21,10 +17,10 @@
     "static/media/close.svg": "/neuralink/static/media/close.10f0192e64f86ee1bf51e14a53893e4e.svg",
     "static/media/facebook.svg": "/neuralink/static/media/facebook.64aeee0b4f31c4777a3439cbba5f2744.svg",
     "main.d218a176.css.map": "/neuralink/static/css/main.d218a176.css.map",
-    "main.eebeb1bc.js.map": "/neuralink/static/js/main.eebeb1bc.js.map"
+    "main.d74b1db0.js.map": "/neuralink/static/js/main.d74b1db0.js.map"
   },
   "entrypoints": [
     "static/css/main.d218a176.css",
-    "static/js/main.eebeb1bc.js"
+    "static/js/main.d74b1db0.js"
   ]
 }
