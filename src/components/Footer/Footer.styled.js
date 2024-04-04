@@ -45,8 +45,10 @@ export const FooterStyled = styled.footer`
 
         @media screen and (min-width: 980px){
             margin-top: 10px;
-            justify-content: space-between;
+            /* justify-content: space-between; */
             width: 100%;
+            gap: 48px;
+            justify-content: flex-start;
         }
     }
 
