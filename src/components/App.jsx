@@ -10,7 +10,11 @@ import { Footer } from "../components/Footer/Footer";
 import { useModal } from "../hooks/useModal";
 import { Modal } from "./Modal/Modal";
 import { useRef } from "react";
-import {RefreshLoading} from "../components/CustomLoaders/CustomLoaders"
+import { RefreshLoading } from "../components/CustomLoaders/CustomLoaders";
+// import { useEffect } from "react";
+// import ReactPixel from 'react-facebook-pixel';
+import Facebook1 from "../tracking/Facebook1";
+import Facebook2 from "../tracking/Facebook2";
 
 
 export const App= () => {
@@ -18,8 +22,26 @@ export const App= () => {
   const registerFormRef = useRef(null);
 
 
+  // useEffect(() => {
+  //   if(!isRegisterModalOpen){
+  //     ReactPixel.init('378170871658920');
+  //     ReactPixel.pageView();
+  //   }
+  // }, [isRegisterModalOpen]);
+
+
+  // useEffect(() => {
+  //   if(isRegisterModalOpen){
+  //     ReactPixel.init('378170871658920');
+  //     ReactPixel.pageView();
+  //     ReactPixel.track('Lead');
+  //   }
+  // }, [isRegisterModalOpen]);
+
+
   return (
     <> 
+      {isRegisterModalOpen ? <Facebook2/> : <Facebook1/>}
       {isLoading && <RefreshLoading />}
       <Header registerFormRef={registerFormRef}/>
         <HeroSection>

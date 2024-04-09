@@ -7,7 +7,8 @@ import 'react-phone-input-2/lib/style.css';
 import { AsYouType } from 'libphonenumber-js';
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { createContact } from "../../redux/Modal/data-operation"
+// import { createContact } from "../../redux/Modal/data-operation";
+import { openModalRegister } from "../../redux/Modal/modal-slice";
 
 
 
@@ -39,18 +40,38 @@ export const RegisterForm = () => {
         
         validationSchema: ContactFormSchema,
         
-        onSubmit: (values) => {
+        // onSubmit: (values) => {
+        //     const phoneNumberWithPlus = '+' + phoneNumber;
+        //     const formattedNumber = new AsYouType().input(phoneNumberWithPlus);
+
+        //     dispatch(createContact({
+        //         name: values.name,
+        //         lastName: values.surname,
+        //         email: values.email,
+        //         phone: formattedNumber,
+        //         resource: values.resource
+        //     }));
+            
+        //     resetForm({
+        //         values: {
+        //             name: '',
+        //             surname: '',
+        //             email: '',
+        //             phone: ''
+        //         },
+        //     })
+        //     setPhoneNumber('')
+        // },
+        onSubmit:(values) => {
             const phoneNumberWithPlus = '+' + phoneNumber;
             const formattedNumber = new AsYouType().input(phoneNumberWithPlus);
-
-            dispatch(createContact({
-                name: values.name,
-                lastName: values.surname,
-                email: values.email,
-                phone: formattedNumber,
-                resource: values.resource
-            }));
-            
+            console.log(values.name);
+            console.log(values.surname);
+            console.log(values.email);
+            console.log(formattedNumber);
+            console.log(values.resource);
+            dispatch(openModalRegister());
+            setPhoneNumber('');
             resetForm({
                 values: {
                     name: '',
@@ -60,7 +81,7 @@ export const RegisterForm = () => {
                 },
             })
             setPhoneNumber('')
-        },
+        }
     });
 
 
