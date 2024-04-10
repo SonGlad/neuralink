@@ -27,7 +27,7 @@ const Facebook1 = () => {
         'script',
         'https://connect.facebook.net/en_US/fbevents.js'
     );
-    fbq('init', '378170871658920');
+    fbq('init', '952848349730209');
     fbq('track', 'PageView');
   }, []);
 
