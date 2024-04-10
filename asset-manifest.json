@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/neuralink/static/css/main.d218a176.css",
-    "main.js": "/neuralink/static/js/main.aabc8576.js",
+    "main.js": "/neuralink/static/js/main.67e0c367.js",
     "static/media/video.mp4": "/neuralink/static/media/video.12da450262cf825de5a5.mp4",
     "static/media/Logo.png": "/neuralink/static/media/Logo.5535bc54ccf9a56d9dba.png",
     "static/media/Bill.jpg": "/neuralink/static/media/Bill.5881228ed0efdbe2d541.jpg",
@@ -17,10 +17,10 @@
     "static/media/close.svg": "/neuralink/static/media/close.10f0192e64f86ee1bf51e14a53893e4e.svg",
     "static/media/facebook.svg": "/neuralink/static/media/facebook.64aeee0b4f31c4777a3439cbba5f2744.svg",
     "main.d218a176.css.map": "/neuralink/static/css/main.d218a176.css.map",
-    "main.aabc8576.js.map": "/neuralink/static/js/main.aabc8576.js.map"
+    "main.67e0c367.js.map": "/neuralink/static/js/main.67e0c367.js.map"
   },
   "entrypoints": [
     "static/css/main.d218a176.css",
-    "static/js/main.aabc8576.js"
+    "static/js/main.67e0c367.js"
   ]
 }
