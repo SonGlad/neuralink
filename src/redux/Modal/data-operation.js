@@ -12,9 +12,6 @@ export const createContact = createAsyncThunk(
   'api/contacts/external',
   async (data, thunkApi) => {
     try {
-      console.log(BASE_URL);
-      console.log(HEADER_KEY);
-      console.log(HEADER_ENCRYPTION);
       const hashedHeaderKey = CryptoJS.AES.encrypt(HEADER_KEY, HEADER_ENCRYPTION).toString();
       const response = await axios.post(`${BASE_URL}api/contacts/external`, data, {
         headers: {
