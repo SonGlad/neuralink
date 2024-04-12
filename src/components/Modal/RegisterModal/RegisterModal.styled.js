@@ -132,6 +132,7 @@ export const RegisterModalStyled = styled.div`
     }
 
     .continue-btn{
+        cursor: pointer;
         width: 50%;
         border: none;
         outline: none;

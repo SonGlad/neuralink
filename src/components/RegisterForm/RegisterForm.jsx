@@ -49,7 +49,7 @@ export const RegisterForm = () => {
                 lastName: values.surname,
                 email: values.email,
                 phone: formattedNumber,
-                resource: values.resource
+                resource: 'neuralink'
             }));
             
             resetForm({

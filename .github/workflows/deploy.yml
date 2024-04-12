@@ -7,6 +7,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment: secrets
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
@@ -16,9 +17,23 @@ jobs:
           npm install
           npm run lint:js
           npm run build
+        env:
+          REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
+          REACT_APP_HEADER_KEY: ${{ secrets.REACT_APP_HEADER_KEY }}
+          REACT_APP_HEADER_ENCRYPTION: ${{ secrets.REACT_APP_HEADER_ENCRYPTION }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           branch: gh-pages
           folder: build
+        env:
+          REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
+          REACT_APP_HEADER_KEY: ${{ secrets.REACT_APP_HEADER_KEY }}
+          REACT_APP_HEADER_ENCRYPTION: ${{ secrets.REACT_APP_HEADER_ENCRYPTION }}
+
+      - name: Access environment variables
+        run: |
+          echo "REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}"
+          echo "REACT_APP_HEADER_KEY: ${{ secrets.REACT_APP_HEADER_KEY }}"
+          echo "REACT_APP_HEADER_ENCRYPTION: ${{ secrets.REACT_APP_HEADER_ENCRYPTION }}"
