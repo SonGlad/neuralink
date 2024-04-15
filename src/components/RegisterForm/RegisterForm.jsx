@@ -167,7 +167,7 @@ export const RegisterForm = () => {
                     inputProps={{
                         name: 'phone',
                         required: true,
-                        autoFocus: true,
+                        autoFocus: false,
                         id: "phone",
                     }}
                     onBlur= {handleBlur} 

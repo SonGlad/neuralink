@@ -33,13 +33,6 @@ export const PromoSection = forwardRef(({registerFormRef}, reff) => {
                         <BigPlayButton position="center"/>
                         <ControlBar autoHide={false}/>
                     </Player>
-                    {/* <video className="video" controls
-                        controlsList="nodownload noremoteplayback noplaybackrate foobar"
-                        preload="auto" allowFullScreen playsInline
-                    >
-                        <source src={Video} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video> */}
                 </div>
             </div>
             <div className="form-container" id="register" ref={registerFormRef}>
