@@ -8,6 +8,7 @@ import { AsYouType } from 'libphonenumber-js';
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { createContact } from "../../redux/Modal/data-operation";
+import useGeoLocation from "react-ipgeolocation";
 // import { openModalRegister } from "../../redux/Modal/modal-slice";
 
 
@@ -16,6 +17,8 @@ export const RegisterForm = () => {
     const [formChanged, setFormChanged] = useState(false);
     const [phoneNumber, setPhoneNumber] = useState('');
     const dispatch = useDispatch();
+    const location = useGeoLocation();
+    const country = location.country ? location.country.toLowerCase() : "";
 
 
     const {
@@ -179,7 +182,7 @@ export const RegisterForm = () => {
                     containerClass = 'form-label form-label-pnone'
                     inputClass = {`form-field form-field-number `}
                     buttonClass = "dropdown-cont"
-                    country={'us'}
+                    country={country}
                     placeholder="enter your number"
                     autoFormat={true}
                     countryCodeEditable={false}
