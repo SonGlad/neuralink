@@ -11,8 +11,8 @@ import { useModal } from "../hooks/useModal";
 import { Modal } from "./Modal/Modal";
 import { useRef } from "react";
 import { RefreshLoading } from "../components/CustomLoaders/CustomLoaders";
-import Facebook1 from "../tracking/Facebook1";
-import Facebook2 from "../tracking/Facebook2";
+// import Facebook1 from "../tracking/Facebook1";
+// import Facebook2 from "../tracking/Facebook2";
 
 
 export const App= () => {
@@ -22,8 +22,8 @@ export const App= () => {
 
   return (
     <> 
-      <Facebook1/>
-      {isRegisterModalOpen && <Facebook2/>}
+      {/* <Facebook1/> */}
+      {/* {isRegisterModalOpen && <Facebook2/>} */}
       {isLoading && <RefreshLoading />}
       <Header registerFormRef={registerFormRef}/>
         <HeroSection>

@@ -19,6 +19,8 @@ jobs:
           npm run build
         env:
           REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
+          REACT_APP_BASE_URL1: ${{ secrets.REACT_APP_BASE_URL1 }}
+          REACT_APP_BASE_URL2: ${{ secrets.REACT_APP_BASE_URL2 }}
           REACT_APP_HEADER_KEY: ${{ secrets.REACT_APP_HEADER_KEY }}
           REACT_APP_HEADER_ENCRYPTION: ${{ secrets.REACT_APP_HEADER_ENCRYPTION }}
 
@@ -29,11 +31,15 @@ jobs:
           folder: build
         env:
           REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
+          REACT_APP_BASE_URL1: ${{ secrets.REACT_APP_BASE_URL1 }}
+          REACT_APP_BASE_URL2: ${{ secrets.REACT_APP_BASE_URL2 }}
           REACT_APP_HEADER_KEY: ${{ secrets.REACT_APP_HEADER_KEY }}
           REACT_APP_HEADER_ENCRYPTION: ${{ secrets.REACT_APP_HEADER_ENCRYPTION }}
 
       - name: Access environment variables
         run: |
           echo "REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}"
+          echo "REACT_APP_BASE_URL1: ${{ secrets.REACT_APP_BASE_URL1 }}"
+          echo "REACT_APP_BASE_URL2: ${{ secrets.REACT_APP_BASE_URL2 }}"
           echo "REACT_APP_HEADER_KEY: ${{ secrets.REACT_APP_HEADER_KEY }}"
           echo "REACT_APP_HEADER_ENCRYPTION: ${{ secrets.REACT_APP_HEADER_ENCRYPTION }}"

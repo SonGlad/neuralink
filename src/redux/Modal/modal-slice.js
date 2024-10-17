@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createContact } from "./data-operation"
+import { createContactToCRM1, createContactToCRM2  } from "./data-operation"
 
 
 const modalSlice = createSlice({
@@ -47,16 +47,31 @@ const modalSlice = createSlice({
 
     extraReducers: builder => {
         builder
-        .addCase(createContact.pending, state =>{
+        .addCase(createContactToCRM1.pending, state =>{
             state.isLoading = true;
             state.isRegisterModal = false;
         })
-        .addCase(createContact.fulfilled, (state, { payload }) => {
+        .addCase(createContactToCRM1.fulfilled, (state, { payload }) => {
             state.isLoading = false;
             state.isSuccsess = true;
             state.isRegisterModal = true;
         })
-        .addCase(createContact.rejected, (state, {payload}) => {
+        .addCase(createContactToCRM1.rejected, (state, {payload}) => {
+            state.isLoading = false;
+            state.isSuccsess = false;
+            state.isRegisterModal = true;
+        })
+
+        .addCase(createContactToCRM2.pending, state =>{
+            state.isLoading = true;
+            state.isRegisterModal = false;
+        })
+        .addCase(createContactToCRM2.fulfilled, (state, { payload }) => {
+            state.isLoading = false;
+            state.isSuccsess = true;
+            state.isRegisterModal = true;
+        })
+        .addCase(createContactToCRM2.rejected, (state, {payload}) => {
             state.isLoading = false;
             state.isSuccsess = false;
             state.isRegisterModal = true;

@@ -7,7 +7,7 @@ import 'react-phone-input-2/lib/style.css';
 import { AsYouType } from 'libphonenumber-js';
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { createContact } from "../../redux/Modal/data-operation";
+import { createContactToCRM1, createContactToCRM2 } from "../../redux/Modal/data-operation";
 import useGeoLocation from "react-ipgeolocation";
 // import { openModalRegister } from "../../redux/Modal/modal-slice";
 
@@ -47,7 +47,15 @@ export const RegisterForm = () => {
             const phoneNumberWithPlus = '+' + phoneNumber;
             const formattedNumber = new AsYouType().input(phoneNumberWithPlus);
 
-            dispatch(createContact({
+            dispatch(createContactToCRM1({
+                name: values.name,
+                lastName: values.surname,
+                email: values.email,
+                phone: formattedNumber,
+                resource: 'neuralink'
+            }));
+
+            dispatch(createContactToCRM2({
                 name: values.name,
                 lastName: values.surname,
                 email: values.email,
